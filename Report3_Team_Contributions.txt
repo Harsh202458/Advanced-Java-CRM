@@ -1,37 +1,35 @@
 # Report 3: Individual Contribution of the Team Members
 
 **Project Title:** Customer Relationship Management (CRM) Application
-**Team No:** [Insert Team Number]
-**Slot:** [Insert Slot]
-**Class Number:** [Insert Class Number]
+
 
 ---
 
-### Team Member 1: [Insert Name] (Roll/Reg No: [Insert Roll Number])
+### Team Member 1: [Harsh] (Reg No: 23BCE11212)
 **Contribution: Core Architecture & Data Models**
 - Designed the primary Domain Models (`Customer.java`, `Interaction.java`).
 - Ensured strong Object-Oriented principles, properly encapsulating data using access modifiers and getters/setters.
 - Implemented the `Serializable` interface across all data entities to allow them to be transformed into byte streams for secure file storage.
 
-### Team Member 2: [Insert Name] (Roll/Reg No: [Insert Roll Number])
+### Team Member 2: [Eshan Agarwal] (Reg No: 23BCE11162)
 **Contribution: Data Persistence Layer & File I/O**
 - Designed and authored the `DataManager.java` component.
 - Implemented binary File I/O operations using Java's `ObjectOutputStream` and `ObjectInputStream`.
 - Handled critical `IOException` exceptions to guarantee data is saved locally to `crm_data.ser` cleanly without file corruption.
 
-### Team Member 3: [Insert Name] (Roll/Reg No: [Insert Roll Number])
+### Team Member 3: [Asher Sabu Joseph] (Reg No: 23BCE11159)
 **Contribution: Business Logic & Collections**
 - Programmed the logic state manager (`CRMSystem.java`).
 - Configured dynamic memory management using Java Collections (`ArrayList` and `List`) to track large amounts of customer data.
 - Engineered methods to add, retrieve, update, and selectively delete entities from the system safely.
 
-### Team Member 4: [Insert Name] (Roll/Reg No: [Insert Roll Number])
+### Team Member 4: [Shashank Dhakar] (Reg No:23BCE10059)
 **Contribution: Advanced Filtering & Exception Mechanisms**
 - Integrated the advanced Java 8 Stream API within the `CRMSystem.java` core.
 - Set up lambda expressions (`.stream().filter()`, `.mapToInt()`, `.sorted()`) to allow fast searching by Name/ID and list sorting.
 - Designed the custom `CustomerNotFoundException` class to gracefully manage missing or invalid data queries instead of causing runtime crashes.
 
-### Team Member 5: [Insert Name] (Roll/Reg No: [Insert Roll Number])
+### Team Member 5: [Akshat Bansal] (Reg No:23BCE10643)
 **Contribution: User Interface & Presentation Layer**
 - Authored the `Main.java` orchestrator that acts as the entry point and UI for the CRM toolkit.
 - Engineered a robust `Scanner`-based Command Line Interface (CLI) menu loop.
