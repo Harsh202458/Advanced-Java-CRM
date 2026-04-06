@@ -1,0 +1,30 @@
+# Report 2: Objectives, Outcomes, and Concepts Used
+
+## 1. Objectives of the Project
+- **Data Management Mastery**: To create a robust system for storing, retrieving, and updating customer profiles and their historical interactions efficiently.
+- **Practical Application of OOP**: To model real-world business entities (Customers, Interactions) using Object-Oriented design principles (Encapsulation, Constructors).
+- **Reliable Data Persistence**: To ensure that the business data is continuously preserved between application uses without relying on external third-party database systems that require complex configurations.
+- **Error Resiliency**: To build a secure system that handles invalid operations (like querying a missing customer ID) via appropriate catch block pipelines instead of abrupt program crashes.
+
+## 2. Outcomes of the Project
+- Successfully engineered a functioning console-based CRM that allows salespeople to log detailed notes against customer IDs.
+- Achieved reliable, local data persistence using custom Serialization managers.
+- Designed an intuitive command-line interface utilizing `Scanner` while safely capturing standard execution anomalies.
+- Improved search performance and data manipulation using advanced lambda expressions.
+
+## 3. Concepts of Advanced Java Programming Used
+
+### a) Object Serialization (java.io.Serializable)
+Used extensively in `DataManager.java`. Instead of integrating an external RDBMS like SQL, Java's serialization mechanism allows the application to directly map the `Customer` and `Interaction` heap memory objects into byte streams and store them in a binary file (`crm_data.ser`).
+
+### b) Java Collection Framework & Generics
+Collections such as `ArrayList` and interfaces like `List` form the fundamental data structures of the application. Generics (`List<Customer>`) ensure compile-time type-safety when dealing with large lists of prospects.
+
+### c) Java Stream API & Lambda Expressions
+In `CRMSystem.java`, the Java 8+ Stream API is implemented to perform complex querying. Methods like `.filter()`, `.mapToInt()`, `.findFirst()`, and `.sorted()` allow declarative and fast data operations, especially for filtering names or extracting the maximum ID dynamically.
+
+### d) Custom Exception Handling
+The project implements a bespoke exception `CustomerNotFoundException`. This forces the architectural layers (`CRMSystem` to `Main` UI) to handle explicit business-logic errors cleanly using Try-Catch blocks rather than relying purely on generic runtime exceptions.
+
+### e) Date and Time API
+`LocalDateTime` and `DateTimeFormatter` from `java.time` package are used in the `Interaction` model to accurately capture and format the timestamp of when a CRM note was taken.
