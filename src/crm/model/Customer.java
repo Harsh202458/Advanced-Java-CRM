@@ -43,4 +43,25 @@ public class Customer implements Serializable {
         return String.format("ID: %-5d | Name: %-20s | Email: %-25s | Phone: %-15s | Status: %s", 
                              id, name, email, phone, status);
     }
+
+    public String toJson() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        sb.append("\"id\":").append(id).append(",");
+        sb.append("\"name\":\"").append(name != null ? name.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "") : "").append("\",");
+        sb.append("\"email\":\"").append(email != null ? email.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "") : "").append("\",");
+        sb.append("\"phone\":\"").append(phone != null ? phone.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "") : "").append("\",");
+        sb.append("\"status\":\"").append(status != null ? status.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "") : "").append("\",");
+        sb.append("\"interactions\":[");
+        for(int i=0; i<interactions.size(); i++) {
+            sb.append(interactions.get(i).toJson());
+            if(i < interactions.size() - 1) sb.append(",");
+        }
+        sb.append("]");
+        sb.append("}");
+        return sb.toString();
+    }
 }
+Pressing key...Clicking...Stopping...
+
+Stop Agent
