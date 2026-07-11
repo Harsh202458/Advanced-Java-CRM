@@ -26,4 +26,15 @@ public class Interaction implements Serializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         return String.format("[%s] %s: %s", date.format(formatter), type, note);
     }
+
+    public String toJson() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return String.format("{\"date\":\"%s\", \"type\":\"%s\", \"note\":\"%s\"}", 
+            date.format(formatter), 
+            type.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", ""), 
+            note.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", ""));
+    }
 }
+Pressing key...Clicking...Stopping...
+
+Stop Agent
