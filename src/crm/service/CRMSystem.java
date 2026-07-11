@@ -95,4 +95,11 @@ public class CRMSystem {
     public void saveData() {
         dataManager.saveCustomers(customers);
     }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
 }
+Pressing key...Clicking...Stopping...
+
+Stop Agent
